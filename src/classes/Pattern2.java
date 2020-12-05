@@ -2,7 +2,7 @@ package classes;
 
 import java.util.Scanner;
 
-public class Homework {
+public class Pattern2 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -169,5 +169,7 @@ public class Homework {
 			System.out.print(" ");
 		}
 	}
+	
+	
 
 }
