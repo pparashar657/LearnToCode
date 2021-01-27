@@ -19,6 +19,65 @@ public class MyLinkedList {
 		temp.next = newObj;
 	}
 	
+	void insert(int data, int pos) {
+		MyLinkedList newObj =  new MyLinkedList(data);
+		MyLinkedList temp = this;
+		int count = 1;
+		while (count<pos-1 && temp != null) {
+			temp = temp.next;
+			count++;
+		}
+		MyLinkedList nextNode = temp.next;
+		temp.next = newObj;
+		newObj.next = nextNode;
+	}
+	
+	void remove_Last() {
+		MyLinkedList temp = this;
+		while (temp.next.next != null) {
+			temp = temp.next;
+		}
+		temp.next = null;
+	}
+	
+	void remove(int pos) {
+		MyLinkedList temp = this;
+		int count = 1;
+		while (count<pos-1 && temp != null) {
+			temp = temp.next;
+			count++;
+		}
+		temp.next = temp.next.next;
+	}
+	
+	void update(int data, int pos) {
+		this.remove(pos);
+		insert(data,pos);
+	}
+	
+	int size() {
+		MyLinkedList temp = this;
+		int count = 0;
+		
+		while(temp!=null) {
+			temp = temp.next;
+			count++;
+		}
+		return count;
+	}
+	
+	boolean search(int data) {
+		MyLinkedList temp = this;
+		
+		while(temp!=null) {
+			if (temp.data == data) {
+				return true;
+			}
+			temp = temp.next;
+		}
+		return false;
+	}
+	
 	void print() {
 		MyLinkedList temp = this;
 		while (temp != null) {
