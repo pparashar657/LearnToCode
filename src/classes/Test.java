@@ -1,6 +1,7 @@
 package classes;
 
 import java.util.Arrays;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class Test {
@@ -65,15 +66,22 @@ public class Test {
     
 	public static void main(String[] args) {
 		
-		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();
-		
-		int arr[][] = new int[n][2];
-		for (int i=0;i<n;i++) {
-			arr[i][0] = sc.nextInt();
-			arr[i][1] = sc.nextInt();
+//		Scanner sc = new Scanner(System.in);
+//		int n = sc.nextInt();
+//		
+//		int arr[][] = new int[n][2];
+//		for (int i=0;i<n;i++) {
+//			arr[i][0] = sc.nextInt();
+//			arr[i][1] = sc.nextInt();
+//		}
+//		System.out.println(minTimeToVisitAllPoints(arr));
+		Temp t2 = Temp.SEVEN;
+		Optional<Temp> t = Optional.empty();
+		if (t.isEmpty()) {
+			System.out.println("Hello");
 		}
-		System.out.println(minTimeToVisitAllPoints(arr));
+		
+		
 		
 	}
 }

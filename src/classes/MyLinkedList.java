@@ -78,6 +78,18 @@ public class MyLinkedList {
 		return false;
 	}
 	
+	MyLinkedList searchNode(int data) {
+		MyLinkedList temp = this;
+		
+		while(temp!=null) {
+			if (temp.data == data) {
+				return temp;
+			}
+			temp = temp.next;
+		}
+		return null;
+	}
+	
 	void print() {
 		MyLinkedList temp = this;
 		while (temp != null) {
