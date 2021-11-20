@@ -10,33 +10,46 @@ public class QuesArray1 {
 		// 2. Average
 		// 3. Max and Min, of the array
 
-		Scanner sc = new Scanner(System.in);
-
-		System.out.println("Enter the length");
-		int len = sc.nextInt();
-
-		int arr[] = new int[len];
-
-		System.out.println("Enetr the elemnts");
-		for (int i = 0; i < arr.length; i++) {
-			arr[i] = sc.nextInt();
-		}
+//		int a = 10;
+//		
+//		a = "Pawan";
+//		
+//		
+//		Scanner sc = new Scanner(System.in);
+//
+//		System.out.println("Enter the length");
+//		int len = sc.nextInt();
+//
+//		int arr[] = new int[len];
+//
+//		System.out.println("Enetr the elemnts");
+//		for (int i = 0; i < arr.length; i++) {
+//			arr[i] = sc.nextInt();
+//		}
+//		
+//		int sum = 0;
+//		int max = Integer.MIN_VALUE;
+//		int min = Integer.MAX_VALUE;
+//		
+//		for (int num: arr) {
+//			sum += num;
+//			max = Math.max(max, num);
+//			min = Math.min(min, num);
+//		}
+//		
+//		System.out.println("The sum = " + sum);
+//		System.out.println("The average = " + (float) sum/ (1.0 * arr.length));
+//		System.out.println("The max = " + max);
+//		System.out.println("The min = " + min);
+//		
 		
-		int sum = 0;
-		int max = Integer.MIN_VALUE;
-		int min = Integer.MAX_VALUE;
+		int[] a = {1,2,3,4,5,6,7,8,9};
 		
-		for (int num: arr) {
-			sum += num;
-			max = Math.max(max, num);
-			min = Math.min(min, num);
-		}
+		int[] b = new int[6];
 		
-		System.out.println("The sum = " + sum);
-		System.out.println("The average = " + (float) sum/ (1.0 * arr.length));
-		System.out.println("The max = " + max);
-		System.out.println("The min = " + min);
+		System.arraycopy(a, 4, b, 0, 2);
 		
+		System.out.println(Arrays.toString(b));
 
 
 	}

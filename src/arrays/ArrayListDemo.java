@@ -1,12 +1,18 @@
 package arrays;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class ArrayListDemo {
 
 	public static void main(String[] args) {
 		
 		ArrayList<Integer> list = new ArrayList<>();
+		List<Integer> list2 = new ArrayList<>();
+		List<Integer> list3 = new LinkedList<>();
+		
+		
 		
 		System.out.println(list);
 		
@@ -34,6 +40,10 @@ public class ArrayListDemo {
 		
 		list.remove(0);
 		System.out.println(list);
+		
+		System.out.println(list.indexOf(10));
+		
+		System.out.println(list.contains(100));
 		
 //		System.out.println(list.size());
 		

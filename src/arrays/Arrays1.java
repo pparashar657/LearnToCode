@@ -19,6 +19,8 @@ public class Arrays1 {
 		arr[3] = 132;
 		arr[4] = 1255;
 		
+		
+		
 		System.out.println(arr.toString());
 ////		
 ////		
