@@ -3,8 +3,8 @@ package patterns;
 public class Patterns {
 
 	public static void main(String[] args) {
-//		pattern11(9);
-		pascalTriangle(5);
+		pattern24(4);
+//		pascalTriangle(5);
 
 	}
 
@@ -281,6 +281,52 @@ public class Patterns {
 			for (int col = 1; col <= row; col++) {
 				value = value * (row - col + 1)/ col;
 				System.out.print(value+ " ");
+			}
+			System.out.println();
+		}
+	}
+	
+	
+	/*
+	 * *         *
+       **       **
+       * *     * *
+       *  *   *  *
+       *   * *   *
+       *    *    *
+       *   * *   *
+       *  *   *  *
+       * *     * *
+       **       **
+       *         *
+
+	 */
+	
+	public static void butterFly(int n) {
+		for (int row = 0; row <= 2 * n; row++) {
+			for (int col = 0; col <= 2*n ;col++) {
+				if (col == 0 || col == 2*n) {
+					System.out.print("*");
+				}
+				else if (row == col || (row + col) == 2*n) {
+					System.out.print("*");
+				} else {
+					System.out.print(" ");
+				}
+			}
+			System.out.println();
+		}
+	}
+	
+	public static void pattern24(int n) {
+		for (int row = 1; row < 2 * n; row++ ) {
+			for (int col = 1; col < 2* n; col++) {
+				int top = row;
+				int left = col;
+				int right = 2 * n - col;
+				int bottom = 2 * n - row;
+				int val = Math.min(Math.min(top, bottom), Math.min(left, right));
+				System.out.print((n -val + 1) + " ");
 			}
 			System.out.println();
 		}

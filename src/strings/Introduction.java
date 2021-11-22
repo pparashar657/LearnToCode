@@ -36,7 +36,7 @@ public class Introduction {
 //		System.out.println(str4.equals(str3));
 //		
 //		
-//		int n = 100000;
+		int n = 10000000;
 //		
 //		long start = System.currentTimeMillis();
 //		
@@ -48,17 +48,25 @@ public class Introduction {
 //		long end = System.currentTimeMillis();
 //		System.out.println(end-start);
 ////		
-//		long start = System.currentTimeMillis();
-//		
-//		
+		long start = System.currentTimeMillis();
+		
+		
 //		String str = "";
 //		
 //		for (int i=0;i<n;i++) {
 //			str += ".";
 //		}
 //		
+		
+//		StringBuilder sb = new StringBuilder();
+//		for (int i=0;i<n;i++) {
+//			sb.append(".");
+//		}
+//			
 //		long end = System.currentTimeMillis();
 //		System.out.println(end-start);
+		
+		
 		
 		// Important Functions in Strings
 		
@@ -88,10 +96,9 @@ public class Introduction {
 //		
 //		// Replacing 
 //		
-//		String name = "Pawan";
-//		
-//		System.out.println(name.replace("aw", "z"));
-//		System.out.println(name.replaceFirst("aw", "z"));
+		String name = "    abc \n\n\n\n\n    def \t\t\t ccc     n";
+		
+		System.out.println(name.replace('\n', ' '));
 //		
 //		System.out.println(name.toLowerCase());
 //		System.out.println(name);
@@ -115,39 +122,41 @@ public class Introduction {
 //		
 		// Split function
 		
-		String str3 = "This is new String";
+		String str3 = "This is new     String";
 		String[] words = str3.split(" ");
 		for (String word: words) {
 			System.out.println(word);
 		}
+//		
 		
-		String str = "   Thi is Pawan     ";
-		
-		System.out.println(str.trim());
-		System.out.println(str);
-		
-		int a = 100;
-		
-		String numA = String.valueOf(a);
-		System.out.println(numA);
-		
-		String num = "100";
-		int nu = Integer.valueOf(num);
-		
-		System.out.println(nu/2);
-		
-		String str4 = "Pawan";
-		
-		char[] charArr = str4.toCharArray();
-		
-		charArr[0] = 'a';
-		
-		System.out.println(charArr);
-		
-		String str5 = String.valueOf(charArr);
-		
-		System.out.println(str5);
-		
+		// Trim Function 
+//		String str = "   Thi is Pawan     ";
+//		
+//		System.out.println(str.trim());
+//		System.out.println(str);
+//		
+//		int a = 100;
+//		
+//		String numA = String.valueOf(a);
+//		System.out.println(numA);
+//		
+//		String num = "100";
+//		int nu = Integer.valueOf(num);
+//		
+//		System.out.println(nu/2);
+//		
+//		String str4 = "Pawan";
+//		
+//		char[] charArr = str4.toCharArray();
+//		
+//		charArr[0] = 'a';
+//		
+//		System.out.println(charArr);
+//		
+//		String str5 = String.valueOf(charArr);
+//		
+//		System.out.println(str5);
+//		
 	}
 
 }
