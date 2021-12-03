@@ -1,5 +1,7 @@
 package strings;
 
+import java.util.ArrayList;
+
 public class AllSubsequence {
 
 	public static void main(String[] args) {
@@ -11,7 +13,7 @@ public class AllSubsequence {
 
 	private static void printAllSubsequence(String str) {
 		int n = str.length();
-		
+		ArrayList<String> myAns = new ArrayList<>();
 		for(int num = 0; num < (1 << n); num++) {
 			String ans = "";
 			for (int i =0; i< str.length(); i++) {
@@ -19,7 +21,7 @@ public class AllSubsequence {
 					ans += str.charAt(i);
 				}
 			}
-			System.out.println(ans);
+			if (ans != "") myAns.add(ans);
 		}
 		
 	}
