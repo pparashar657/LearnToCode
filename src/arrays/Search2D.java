@@ -5,9 +5,12 @@ public class Search2D {
 	public static void main(String[] args) {
 		int[][] arr = {{1},{3}};
 		
+		int[] a = {0};
+		
 		System.out.println(searchMatrix(arr, 3));
 
 	}
+	
 	
 	public static int getDesiredRow(int[][] matrix, int target) {
         int start = 0;

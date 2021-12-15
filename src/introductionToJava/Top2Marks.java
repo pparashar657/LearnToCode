@@ -1,5 +1,7 @@
 package introductionToJava;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Top2Marks {
