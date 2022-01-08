@@ -9,8 +9,8 @@ public class CoinChange {
 	
 	public static void main(String[] args) {
 		
-		int[] coins = {2};
-		int amount = 3;
+		int[] coins = {1,2,5};
+		int amount = 30;
 		
 		System.out.println(coinChange(coins, amount));
 	}
