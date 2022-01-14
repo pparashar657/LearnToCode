@@ -6,6 +6,21 @@ public class Car extends Vehicle {
     String engineType;
     int numberOfDoors;
 
+    Car() {
+        super();
+        System.out.println("I am default car constructor");
+    }
+
+//    Car(String name) {
+//        super(name);
+//        System.out.println("I am parameterized car constructor");
+//    }
+
+    Car(String name) {
+        super(name);
+        System.out.println("I am parameterized car constructor");
+    }
+
     void start() {
         System.out.println(this.name +" is starting");
     }

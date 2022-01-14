@@ -10,7 +10,7 @@ public class ConstructorDemo {
         System.out.println(chirag);
 
 //        chirag.sleep();
-        Human pawan = new Human();
+        Human pawan = new Human("Pawan", "23-19-2019");
         System.out.println(pawan);
 //        pawan.sleep();
 
