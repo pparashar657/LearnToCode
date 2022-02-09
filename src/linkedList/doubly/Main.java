@@ -30,7 +30,7 @@ public class Main {
         list.print();
 
         Map<Integer, Integer> map = new HashMap<>();
-        map.put()
+//        map.put()
     }
 
 }
