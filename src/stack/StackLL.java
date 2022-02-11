@@ -7,11 +7,11 @@ public class StackLL {
     }
 
     public int pop() {
-
+        return 0;
     }
 
     public int peek() {
-
+        return 0;
     }
 
 }
