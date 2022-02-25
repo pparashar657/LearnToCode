@@ -50,6 +50,98 @@ public class Main {
         }
     }
 
+    public static int getMax(GenericNode root) {
+        int max = root.data;
+        for(GenericNode node: root.children){
+            int currMax = getMax(node);
+            if(currMax > max){
+                max = currMax;
+            }
+        }
+        return max;
+    }
+
+    public static int getLeafCount(GenericNode root) {
+        if(root.children.isEmpty()) {
+            return 1;
+        }
+        int ans = 0;
+
+        for(GenericNode child: root.children) {
+            ans += getLeafCount(child);
+        }
+        return ans;
+    }
+
+
+    public static boolean search(GenericNode root, int target) {
+        if(root.data == target) {
+            return true;
+        }
+        for(GenericNode node: root.children) {
+            if(search(node,target)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static int getLevel(GenericNode root, int target, int level) {
+
+        if(root.data == target) {
+            return level;
+        }
+
+        for(GenericNode child: root.children) {
+            int currAns = getLevel(child, target, level+1);
+            if(currAns != -1) {
+                return currAns;
+            }
+        }
+        return -1;
+    }
+
+    public static int replaceNodeWithLeafCount(GenericNode root) {
+        if(root.children.isEmpty()) {
+            root.data = 0;
+            return 1;
+        }
+        int ans = 0;
+        for(GenericNode child: root.children) {
+            ans += replaceNodeWithLeafCount(child);
+        }
+        root.data = ans;
+        return ans;
+    }
+
+    public static int getDepth(GenericNode root, int target) {
+        return getLevel(root, target, 1);
+    }
+
+    public static int maxHeight(GenericNode root) {
+        int max = 0;
+
+        for(GenericNode child: root.children) {
+            max = Math.max(max, maxHeight(child));
+        }
+        return max + 1;
+    }
+
+    public static int getHeight(GenericNode root, int target) {
+
+        if(root.data == target) {
+            return maxHeight(root);
+        }
+        for(GenericNode child: root.children) {
+            int currAns = getHeight(child, target);
+            if(currAns != -1) {
+                return currAns;
+            }
+        }
+        return -1;
+    }
+
+
     public static void main(String[] args) {
 //        GenericNode root = new GenericNode(10);
 //        root.children.add(new GenericNode(20));
@@ -65,9 +157,19 @@ public class Main {
 
         GenericNode root = create(treeData);
 
-        preOrder(root);
-        System.out.println();
-        postOrder(root);
+//        preOrder(root);
+//        System.out.println();
+//        postOrder(root);
+
+//        System.out.println(search(root, 60));
+//        System.out.println(getMax(root));
+//        System.out.println(getLeafCount(root));
+//        System.out.println(getLevel(root, 4, 0));
+//        print(root);
+//        replaceNodeWithLeafCount(root);
+//        System.out.println("After replacing");
+//        print(root);
+        System.out.println(getHeight(root, 4));
     }
 
 }
