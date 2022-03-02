@@ -1,7 +1,6 @@
 package trees.generic;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class Main {
 
@@ -72,7 +71,45 @@ public class Main {
         }
         return ans;
     }
+    public static void printAllPath(GenericNode root, List<Integer> path){
+        List<Integer> newPath = new ArrayList<>(path);
+        newPath.add(root.data);
+        if(root.children.isEmpty()) {
+            System.out.println(newPath);
+//            path.remove(path.size()-1);
+            return;
+        }
+        for(GenericNode child: root.children) {
+            printAllPath(child, newPath);
+        }
+//        path.remove(path.size()-1);
+    }
 
+    public static List<List<Integer>> getAllPaths(GenericNode root) {
+        return null;
+    }
+
+    public static List<Integer> getPath(GenericNode root, int data) {
+
+        if(root.data == data) {
+            List<Integer> ans = new ArrayList<>();
+            ans.add(data);
+            return ans;
+        }
+
+        if(root.children.isEmpty()) {
+            return null;
+        }
+
+        for(GenericNode child: root.children) {
+            List<Integer> smallAns = getPath(child, data);
+            if (smallAns != null) {
+                smallAns.add(0, root.data);
+                return smallAns;
+            }
+        }
+        return null;
+    }
 
     public static boolean search(GenericNode root, int target) {
         if(root.data == target) {
@@ -141,6 +178,32 @@ public class Main {
         return -1;
     }
 
+    public static List<Integer> getAncestors(GenericNode root, int data) {
+        List<Integer> ans = getPath(root, data);
+        Collections.reverse(ans);
+        ans.remove(0);
+        return ans;
+    }
+
+    public static int lowestCommonAncestor(GenericNode root, int node1, int node2) {
+        List<Integer> ancestor1 = getAncestors(root, node1);
+        List<Integer> ancestor2 = getAncestors(root, node2);
+
+        int i=ancestor1.size()-1, j=ancestor2.size()-1;
+        while(i >-1 && j > -1 && ancestor1.get(i).equals(ancestor2.get(j))) {
+            i--;
+            j--;
+        }
+        return ancestor1.get(i+1);
+    }
+
+    public static void createMirror(GenericNode root) {
+        for(GenericNode child: root.children) {
+            createMirror(child);
+        }
+        Collections.reverse(root.children);
+    }
+
 
     public static void main(String[] args) {
 //        GenericNode root = new GenericNode(10);
@@ -153,7 +216,8 @@ public class Main {
 //
 //        root.children.get(1).children.add(new GenericNode(7));
 
-        int[] treeData = {1,3,2,1,5,0,3,2,6,0,7,0,4,0};
+//        int[] treeData = {1,3,2,1,5,0,3,2,6,0,7,0,4,0};
+        int[] treeData = {1,2,2,3,4,0,5,1,6,0,7,0,3,1,8,2,9,0,10,0};
 
         GenericNode root = create(treeData);
 
@@ -169,7 +233,15 @@ public class Main {
 //        replaceNodeWithLeafCount(root);
 //        System.out.println("After replacing");
 //        print(root);
-        System.out.println(getHeight(root, 4));
+//        System.out.println(getHeight(root, 4));
+//        printAllPath(root, new ArrayList<>());
+//        System.out.println(getPath(root, 5));
+//        System.out.println(getAncestors(root, 7));
+//        System.out.println(lowestCommonAncestor(root, 4,10));
+        print(root);
+        createMirror(root);
+        System.out.println("After mirror");
+        print(root);
     }
 
 }
