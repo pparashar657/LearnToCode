@@ -104,11 +104,21 @@ public class BinaryTree {
     }
 
     public static void main(String[] args) {
-        int[] data = {1,2,3,4,5,6,7,-1,-1,8,9};
-        Node root = create(data, 0);
-//        preOrder(root);
-//        postOrder(root);
-//        inOrder(root);
-        levelOrder(root);
+//        int[] data = {1,2,3,4,5,6,7,-1,-1,8,9};
+//        Node root = create(data, 0);
+////        preOrder(root);
+////        postOrder(root);
+////        inOrder(root);
+//        levelOrder(root);
+//        ArrayList<Integer> list = new ArrayList<>();
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(1,10);
+        map.put(-1,20);
+        map.put(4,40);
+        ArrayList<Integer> keys = new ArrayList<>(map.keySet());
+        System.out.println(keys);
+        keys.add(1);
+
+
     }
 }
