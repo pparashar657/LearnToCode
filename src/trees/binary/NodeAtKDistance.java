@@ -1,9 +1,6 @@
 package trees.binary;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class NodeAtKDistance {
 
@@ -72,7 +69,7 @@ public class NodeAtKDistance {
         }
     }
 
-    public List<Integer> distanceK(TreeNode root, TreeNode target, int K) {
+    public List<Integer> distanceK2(TreeNode root, TreeNode target, int K) {
         map = new HashMap<>();
         constructAncestorMap(root, null, true);
         List<Integer> ans = new ArrayList<>();
@@ -83,6 +80,45 @@ public class NodeAtKDistance {
 
         return ans;
 
+    }
+
+    Map<TreeNode, TreeNode> map2;
+    List<Integer> ans;
+    Set<TreeNode> isVisited;
+
+    public void constructAncestorMap(TreeNode root, TreeNode parent){
+
+        if(root == null) {
+            return;
+        }
+
+        map2.put(root, parent);
+
+        constructAncestorMap(root.left, root);
+        constructAncestorMap(root.right, root);
+    }
+
+    public void helper(TreeNode currNode, int dist, int k) {
+        if(currNode == null || dist > k || isVisited.contains(currNode)) {
+            return;
+        }
+        isVisited.add(currNode);
+        if(dist == k) {
+            ans.add(currNode.val);
+        }
+
+        helper(currNode.left, dist+1, k);
+        helper(currNode.right, dist+1, k);
+        helper(map2.get(currNode), dist+1, k);
+    }
+
+    public List<Integer> distanceK(TreeNode root, TreeNode target, int K) {
+        map2 = new HashMap<>();
+        constructAncestorMap(root, null);
+        ans = new ArrayList<>();
+        isVisited = new HashSet<>();
+        helper(target, 0, K);
+        return ans;
     }
 
 }

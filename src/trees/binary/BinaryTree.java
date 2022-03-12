@@ -4,7 +4,7 @@ import java.util.*;
 
 public class BinaryTree {
 
-    private static Node create(int[] data, int idx) {
+    public static Node create(int[] data, int idx) {
 
         if(idx >= data.length || data[idx] == -1) {
             return null;
