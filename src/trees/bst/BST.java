@@ -3,7 +3,7 @@ package trees.bst;
 import trees.binary.BinaryTree;
 import trees.binary.Node;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class BST {
 
@@ -44,10 +44,20 @@ public class BST {
     }
 
     public static void main(String[] args) {
-        int[] arr = {7,2,6,9,1,3,8,4,5};
-        Node root = create(arr);
-        BinaryTree.levelOrder(root);
-        System.out.println(checkBST(root));
+//        int[] arr = {7,2,6,9,1,3,8,4,5};
+//        Node root = create(arr);
+//        BinaryTree.levelOrder(root);
+//        System.out.println(checkBST(root));
+
+        List<String> list = new ArrayList<>();
+
+        Map<String, String> map = new HashMap<>();
+
+        System.out.println(map.get("abc"));
+        System.out.println(list.contains(map.get("abc")));
+        System.out.println(list.contains(map.get(null)));
+
+
     }
 
 }
