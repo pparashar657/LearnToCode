@@ -62,6 +62,16 @@ public class Heap {
         }
     }
 
+    public void fastConstruct(int[] arr) {
+        for(int i=0;i< arr.length;i++) {
+            data[i] = arr[i];
+            size++;
+        }
+        for(int i = size-1;i>-1;i--) {
+            heapifyDown(i);
+        }
+    }
+
     public int remove() {
         if(size == 0) {
             System.out.println("Heap is empty");
